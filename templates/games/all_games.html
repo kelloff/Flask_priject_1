@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+    <center><h1>Любимые игры</h1></center>
+    <div class="box">
+        {% for i in game%}
+            <div style="width: 350px; height: 500px;text-align: center; background-color: white; border: 1px solid black; border-radius:10px; overflow: hidden; margin-top: 15px;">
+                <div style="width: 350px;  height: 205px;text-align: center;  overflow: hidden; background-image: url({{i['thumbnail']}}); background-size:auto; "></div>
+                <p>Название:{{i['title']}}</p>
+                <p>Год выпуска:{{i['release_date']}}</p>
+                <p>Ссылка:<a href="{{i['game_url']}}" target="blank">link</a></p>
+                <p>Описание : {{i['short_description']}}</p>
+                <p>Жанр: {{i['genre']}}</p>
+                <p>Создатели:{{i['developer']}}</p>
+            </div>
+            
+        {% endfor%}
+
+
+    </div>
+</body>
+</html>

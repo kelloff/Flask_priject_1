@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+    <center><h1>Любимые аниме</h1></center>
+    <div class="box">
+        {% for i in r%}
+            <div style="width: 300px; height: 600px;text-align: center; background-color: white; border: 1px solid black; border-radius:10px; overflow: hidden; margin-top: 10px;">
+                <div style="width: 300px;  height: 450px;text-align: center;  overflow: hidden; background-image: url({{i['animeImg']}}); background-size:cover; "></div>
+                <p>Название:{{i['animeTitle']}}</p>
+                <p>Год выпуска:{{i['releasedDate']}}</p>
+                <p>Ссылка:<a href="{{i['animeUrl']}}" target="blank">link</a></p>
+            </div>
+            
+        {% endfor%}
+
+
+    </div>
+</body>
+</html>
