@@ -53,6 +53,3 @@ def anime():
     return render_template('films/anime.html' , r = fav_animes)
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
-# Создать класс User, у которого будут поля id, firstname, lastname
-# Создать массив из 10 разных пользователей
-# Создать эндпоинт /users который будет отображать всех пользователей
